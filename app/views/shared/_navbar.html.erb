@@ -1,0 +1,45 @@
+<nav class="sticky-top navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <%= link_to "Recipe App", root_path, class: "navbar-brand link-success"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <% if user_signed_in?%>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <%# <li class="nav-item ">
+          <%= link_to "Foods", foods_path, class: "nav-link"%>
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Recipies", recipes_path, class: "nav-link"%> 
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Public Recipies", "/public_recipes", class: "nav-link"%>
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Inventories", inventories_path, class: "nav-link"%>
+        <%# </li>  %>
+      </ul>
+      <%end%>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 custom">
+         <% if @current_user %>
+         <li class="nav-item">Welcome
+            <span class="navbar-brand fs-6 text-info"> <%= current_user.name %></span>
+         </li>
+            <li class="nav-item navbar-brand fs-6">
+             <%= button_to "logout", destroy_user_session_path , method: :delete, class: "btn btn-outline-secondary"  %>
+              </li>
+         <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", '/users/sign_in', class: "btn btn-outline-secondary" %>
+               </li>
+          <li class="nav-item">
+              <%= link_to "Sign up", '/users/sign_up', class: "btn btn-outline-secondary"%>
+               </li>
+         <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
