@@ -1,0 +1,7 @@
+<h1>Categories</h1>
+<% @groups.each do |group| %>
+
+   <p> <%=image_tag group.icon %></p>
+    <p><%= link_to group.name, group_path(group) %></p>
+
+<%end%>

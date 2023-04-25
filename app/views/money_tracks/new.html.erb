@@ -1,0 +1,15 @@
+<h2>Add Transcation</h2>
+<h1>Welcome</h1>
+<%=form_with model: [@group, @group.money_tracks.create], class:"input-form"  do |f|%>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.label :title %><br>
+    <%= f.text_field :name,  {:required => true}%><br>
+
+    <%= f.label :category %><br>
+    <%=f.text_field :category, value:@group.name%><br>
+
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+
+    <%= f.submit "Create Transaction", class:"btn btn-primary form-control" %>
+<%end%>
