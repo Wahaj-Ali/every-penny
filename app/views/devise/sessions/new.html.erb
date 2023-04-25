@@ -1,17 +1,13 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <nav class="header">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="sign_up_nav">
     <li>
     <a href="/"><i class="fa fa-navicon"></i></a>
     </li>
     <li>
       <h2 class="heading text-uppercase fw-bold">Log in</h2>
     </li>
-    <li>
-    <%= button_tag type: 'submit' , class:"btn" do %>
-      <i class="fa fa-sign-in" aria-hidden="true"></i>
-      <% end %>
-    </li>
+    
   </ul>
   </nav>
 

@@ -1,20 +1,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <nav class="header">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="sign_up_nav">
     <li>
     <a href="/"><i class="fa fa-navicon"></i></a>
     </li>
     <li>
       <h2 class="heading text-uppercase fw-bold">Sign up</h2>
     </li>
-    <li>
-    <%= button_tag type: 'submit' , class:"btn" do %>
-
-      <i class="fa fa-sign-in" aria-hidden="true"></i>
-
-      <% end %>
-    </li>
+    
   </ul>
   </nav>
 
@@ -39,7 +33,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"p-2 form-control", placeholder: "Confirm Password" %>
   </div>
 
+  <div class="mt-2 ms-5 mb-3 p-2">
+    <%= f.submit "Sign up" , class:" btn btn-primary fs-5" %>
+  </div>
 <% end %>
+
 <div class="m-5 mb-3 fs-5 p-2 ">
 <%= render "devise/shared/links" %>
 </div>

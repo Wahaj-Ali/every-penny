@@ -54,6 +54,7 @@ button a,
   color: white;
   font-size: 18px;
   font-weight: 500;
+  border: none;
 }
 
 .category-div {
@@ -66,6 +67,7 @@ button a,
 .category-info {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .category-div ul {
@@ -98,4 +100,14 @@ button a,
   background-color: transparent;
   border: none;
   color: #fff;
+}
+
+.img-thumbnail {
+  width: 90px;
+}
+
+#sign_up_nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 100px;
 }
