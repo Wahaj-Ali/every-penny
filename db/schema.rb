@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_25_123829) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_25_143758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "money_groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "group_id", null: false
+    t.bigint "money_track_id", null: false
+    t.index ["group_id"], name: "index_money_groups_on_group_id"
+    t.index ["money_track_id"], name: "index_money_groups_on_money_track_id"
+  end
+
+  create_table "money_tracks", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_money_tracks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,8 +54,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_123829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "groups", "users"
+  add_foreign_key "money_groups", "groups"
+  add_foreign_key "money_groups", "money_tracks"
+  add_foreign_key "money_tracks", "users"
 end
