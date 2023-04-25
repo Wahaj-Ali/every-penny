@@ -23,6 +23,17 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    authorize! :destroy, @group
+    flash[:notice] = if @group.destroy
+                       'Category removed successfully'
+                     else
+                       'Something went wrong'
+                     end
+    redirect_to root_path
+  end
+
   private
 
   def group_params
