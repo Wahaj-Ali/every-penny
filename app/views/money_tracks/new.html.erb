@@ -1,15 +1,29 @@
-<h2>Add Transcation</h2>
-<h1>Welcome</h1>
 <%=form_with model: [@group, @group.money_tracks.create], class:"input-form"  do |f|%>
+
+  <nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-arrow-left"></i></a>
+    </li>
+    <li>
+      <h2 class="heading fw-bold">Add Transcation</h2>
+    </li>
+    <li>
+    <%= f.submit "Create Transaction", class:"btn btn-primary form-control" %> 
+    </li>
+  </ul>
+  </nav>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.label :title %><br>
-    <%= f.text_field :name,  {:required => true}%><br>
 
-    <%= f.label :category %><br>
-    <%=f.text_field :category, value:@group.name%><br>
+    <div class="m-5 mb-3">
+    <%= f.text_field :name,required: true, class:"p-2 form-control", placeholder: "Name", id: "name"%><br>
+    </div>
 
-    <%= f.label :amount %><br>
-    <%= f.number_field :amount ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+    <div class="m-5 mb-3">
+    <%=f.text_field :category, value:@group.name, class:"p-2 form-control"%><br>
+    </div>
 
-    <%= f.submit "Create Transaction", class:"btn btn-primary form-control" %>
+    <div class="m-5 mb-3">
+    <%= f.number_field :amount ,  class:"p-2 form-control" , required: true, placeholder: 'Amount',  min: 1, id:"amount"%><br>
+    </div>
 <%end%>
