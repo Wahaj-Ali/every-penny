@@ -15,6 +15,17 @@ class MoneyTracksController < ApplicationController
     end
   end
 
+  def destroy
+    @money_track = MoneyTrack.find(params[:id])
+    authorize! :destroy, @money_track
+    flash[:notice] = if @money_track.destroy
+                       'Transaction removed successfully'
+                     else
+                       'Something went wrong'
+                     end
+    redirect_to root_path
+  end
+
   private
 
   def moneytrack_params
