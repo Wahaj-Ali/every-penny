@@ -41,11 +41,7 @@ class GroupsController < ApplicationController
   end
 
   def icons
-    ['https://i.imgur.com/Ar3Lf3Dt.png',
-     'https://i.imgur.com/R7Q2ZVht.png',
-     'https://i.imgur.com/X99X2Kgt.png',
-     'https://i.imgur.com/bvFovBRt.png',
-     'https://i.imgur.com/mZ6ynFvt.png',
-     'https://i.imgur.com/ZVKPCfjt.png']
+    { 'Grocery' => 'icon0.png', 'Shopping' => 'icon1.png', 'Education' => 'icon2.png', 'Bills' => 'icon3.png',
+      'Insurance' => 'icon4.png', 'Travel' => 'icon5.png' }
   end
 end

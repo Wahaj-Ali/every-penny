@@ -4,11 +4,11 @@
     <li>
     <a href="/"><i class="fa fa-arrow-left"></i></a>
     </li>
-    <li>
-      <h2 class="heading fw-bold">Add Category</h2>
+    <li class="d-flex">
+      <h2 class="heading fw-bold align-self-center">Add Category</h2>
     </li>
-    <li>
-    <%= f.submit "Create Category", class:"btn btn-primary form-control" %> 
+    <li class="d-flex">
+    <%= f.submit "Save", class:"btn btn-primary form-control align-self-center" %> 
     </li>
   </ul>
   </nav>
@@ -18,12 +18,12 @@
   </div>
   <div class="m-5 mb-3">
     <%= f.select :icon, options_for_select([
-      ['Grocery', @icons[0]],
-      ['Shopping' ,@icons[1]],
-      ['Education' ,@icons[2]],
-      ['Bills' ,@icons[3]],
-      ['Insurance' ,@icons[4]],
-      ['Travel' ,@icons[5]],
+      ['Grocery', @icons["Grocery"]],
+      ['Shopping' ,@icons["Shopping"]],
+      ['Education' ,@icons["Education"]],
+      ['Bills' ,@icons["Bills"]],
+      ['Insurance' ,@icons["Insurance"]],
+      ['Travel' ,@icons["Travel"]],
     ]),{ include_blank: "Select Icon"}, required: true , class:"form-select"%>
 
   </div>  
