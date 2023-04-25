@@ -1,0 +1,16 @@
+<%= form_with model: @group, class:"input-form"  do |f|%>
+    
+    <%= f.label :title %><br>
+    <%= f.text_field :name,  {:required => true}%><br>
+
+    <%= f.label :Icon %><br>
+    <%= f.select :icon,options_for_select([
+        ['grocery', @icons[0]],
+        ['shopping' ,@icons[1]],
+        ['education' ,@icons[2]],
+        ['bills' ,@icons[3]],
+        ['insurance' ,@icons[4]],
+        ['travel' ,@icons[5]],
+      ]), required: true  %>
+    <%= f.submit "Create Post", class: "submit" %>
+<%end%>
