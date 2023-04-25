@@ -7,11 +7,10 @@
       <h2 class="heading fw-bold">Categories</h2>
     </li>
     <li>
-    <%= button_to destroy_user_session_path, method: :delete do %>   
+    <%= button_to destroy_user_session_path, method: :delete, class: "logout-btn" do %>   
       <i class="fa fa-sign-out"></i>
     <%end%>
     
-   
     </li>
   </ul>
   </nav>
@@ -23,7 +22,7 @@
     <p> <%=image_tag group.icon ,class:"p-2 m-1 rounded img-thumbnail"%></p>
     <ul class="p-2 m-1">
       <li> <p ><%= link_to group.name, group_path(group), class:"p-2 m-2 text-muted h2" %></p></li>
-      <li> <p class="p-2 m-2"> <%= group.created_at.strftime("%d-%b-%Y")%></p></li>
+      <li> <p class="p-2 m-2 text-muted"> <%= group.created_at.strftime("%d-%b-%Y")%></p></li>
     </ul>
     </div>
     <ul class="p-2 m-1">

@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: #434b54;
 }
 
 .header ul {
@@ -91,4 +92,10 @@ button a,
 
 .height-div {
   height: 150px;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
 }
