@@ -1,16 +1,31 @@
-<h2 class="heading text-uppercase fw-bold">Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-navicon"></i></a>
+    </li>
+    <li>
+      <h2 class="heading text-uppercase fw-bold">Log in</h2>
+    </li>
+    <li>
+    <%= button_tag type: 'submit' , class:"btn" do %>
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+      <% end %>
+    </li>
+  </ul>
+  </nav>
+
+  <%= render 'layouts/errornotice' %>
   <div class="m-5 mb-3">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"p-2 form-control", placeholder: "Email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"p-2 form-control", placeholder: "Email", id: 'email' %>
   </div>
 
   <div class="m-5 mb-3">
-    <%= f.password_field :password, autocomplete: "current-password", class:"p-2 form-control", placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class:"p-2 form-control", placeholder: "Password", id: 'pass' %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-  <div class="mt-5 ms-5 mb-3">
+   <% if devise_mapping.rememberable? %>
+    <div class="mt-5 ms-5 mb-3">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me , class:"p-2"%>
     </div>
@@ -19,6 +34,7 @@
   <div class="mt-2 ms-5 mb-3 p-2">
     <%= f.submit "Log in" , class:" btn btn-primary fs-5" %>
   </div>
+ 
 <% end %>
 <div class="m-5 mb-3 fs-5 p-2 ">
 <%= render "devise/shared/links" %>
