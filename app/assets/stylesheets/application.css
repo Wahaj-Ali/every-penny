@@ -14,16 +14,81 @@
  *= require_self
  */
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.heading {
-  background-color: #3778c2;
-  font-size: 32px;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin: 0;
-}
+ body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header ul {
+    display: flex;
+    background-color: #3778c2;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .header ul li {
+    line-height: 40px;
+    padding: 5px;
+  }
+  
+  button a,
+  .category-div a {
+    text-decoration: none;
+  }
+  
+  .header a {
+    color: inherit;
+  }
+  
+  .header i {
+    font-size: 32px;
+  }
+  
+  .header ul .btn {
+    background-color: inherit;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .category-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+  }
+  
+  .category-info {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .category-div ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .btnn {
+    background-color: #5fb523;
+    border: 1px solid white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    bottom: 0;
+  }
+  
+  .btnn a {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .height-div {
+    height: 150px;
+  }
