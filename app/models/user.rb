@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+
+  private
+
+  def set_role
+    update(role: 'user')
+  end
 end
