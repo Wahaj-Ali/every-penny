@@ -7,6 +7,8 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [🚀 Video Project Presentation ](#-video-project-presentation-)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -63,6 +65,18 @@
 - **Authentication using Devise gem**
 - **Authorization using Cancancan gem**
 - **Splash screen showing the name of the App and options to log in/sign up**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- <a href="https://budget-app-eydq.onrender.com" target="_blank">Live Demo Link</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Video Project Presentation <a name="live-demo"></a>
+
+- <a href="https://www.loom.com/share/847ceda1df05479fbd954103a37f28e9" target="_blank">-Video Project Presentation Link</a>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
@@ -180,6 +194,7 @@ If you like this project please give a⭐️ and share with your friends.
 
 - Thanks to the Microverse team for the great curriculum.
 - Hat tip to anyone whose code was used
+- I would like to thank "Gregoire Vella" for the [Amazing Design Template](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
