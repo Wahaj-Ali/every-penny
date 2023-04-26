@@ -103,11 +103,26 @@ button a,
 }
 
 .img-thumbnail {
-  width: 90px;
+  max-width: 70px;
 }
 
 #sign_up_nav {
   display: flex;
   justify-content: flex-start;
   gap: 100px;
+}
+
+.cat_name {
+  max-width: 100px;
+  overflow: hidden;
+}
+
+.cat_date {
+  min-width: 106px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cat_name {
+    max-width: max-content;
+  }
 }
