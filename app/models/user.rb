@@ -9,9 +9,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  after_create :set_role
+  after_save :set_role
+
   private
 
   def set_role
-    update(role: 'user')
+    update(role: 'user') unless role.present?
   end
 end
