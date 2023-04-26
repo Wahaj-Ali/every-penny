@@ -8,6 +8,7 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
+  - [🚀 Video Project Presentation ](#-video-project-presentation-)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -69,6 +70,12 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - <a href="https://budget-app-eydq.onrender.com" target="_blank">Live Demo Link</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Video Project Presentation <a name="live-demo"></a>
+
+- <a href="https://www.loom.com/share/847ceda1df05479fbd954103a37f28e9" target="_blank">-Video Project Presentation Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
