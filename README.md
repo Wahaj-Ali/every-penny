@@ -194,6 +194,7 @@ If you like this project please give a⭐️ and share with your friends.
 
 - Thanks to the Microverse team for the great curriculum.
 - Hat tip to anyone whose code was used
+- I would like to thank "Gregoire Vella" for the [Amazing Design Template](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
