@@ -17,7 +17,7 @@
 <%=render 'layouts/errornotice' %>
 <% if @groups.any?%>
 <% @groups.each do |group| %>
-  <div class="p-2 m-3  category-div">
+  <div class="p-2 m-2 category-div">
    <div class="category-info">
     <p> <%=image_tag "#{group.icon}" ,class:"p-2 m-1 rounded img-thumbnail"%></p>
     <ul class="px-2 mt-1">
@@ -26,7 +26,7 @@
     </ul>
     </div>
     <ul class="p-0 m-1">
-    <li><p class="p-2 m-1 h3 box_heading"> $<%= group.money_tracks.sum(:amount)%></p></li>
+    <li><p class="p-2 m-1 h3 box_heading price"> $<%= group.money_tracks.sum(:amount)%></p></li>
     <li>
     <%if can? :destroy, group%>
         <%=button_to "Delete", group_path(group.id), method: :delete, class:"btn btn-primary px-4 m-0"%>

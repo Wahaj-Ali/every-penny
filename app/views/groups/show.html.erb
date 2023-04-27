@@ -16,14 +16,14 @@
 
 <%=render 'layouts/errornotice'%>
 
-<div class="p-2 category-div">
+<div class="p-0 category-div">
   <div class="category-info">
     <ul class="p-2 m-2">
-        <li> <p class="p-2 m-2 text-muted h2" ><%= @group.name%></p></li>
+        <li> <p class="p-0 m-0 text-muted h2" ><%= @group.name%></p></li>
     </ul>
   </div>
   <ul class="p-2 m-2">
-    <li><p class="p-2 m-2 h3"> $<%= @group.money_tracks.sum(:amount)%></p></li>
+    <li><p class="p-0 m-0 h3 price"> $<%= @group.money_tracks.sum(:amount)%></p></li>
    
   </ul>
 </div>
@@ -42,7 +42,7 @@
           </ul>
         </div>
         <ul class="p-2 m-1">
-         <li> <p class="p-2 mt-2 h4 box_heading" >$<%= fd.amount%></p></li>
+         <li> <p class="p-2 mt-2 h4 box_heading price" >$<%= fd.amount%></p></li>
          
         </ul>
       </div>

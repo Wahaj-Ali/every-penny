@@ -20,7 +20,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: #434b54;
+  font-family: 'Proxima Nova', sans-serif;
+  background-color: whitesmoke;
 }
 
 .header ul {
@@ -61,7 +62,8 @@ button a,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: whitesmoke;
+  background-color: #fff;
+  max-height: 135px;
 }
 
 .category-info {
@@ -124,6 +126,10 @@ button a,
 
 .box_heading {
   font-size: 1.3rem;
+}
+
+.price {
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {
