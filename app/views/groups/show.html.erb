@@ -36,13 +36,13 @@
       <div class="p-2 m-3 category-div">
         <div class="category-info">
         <p> <%=image_tag @group.icon ,class:"p-1 mx-1 mt-3 rounded img-thumbnail"%></p>
-          <ul class="p-2 ">
-            <li><p class="p-2 text-muted h2 cat_name" ><%= fd.name%></p></li>
-            <li> <p class="p-2 m-2 text-muted cat_date"> <%= fd.created_at.strftime("%d-%b-%Y")%></p></li>
+          <ul class="px-1">
+            <li><p class="py-2 text-muted h2 cat_name box_heading" ><%= fd.name%></p></li>
+            <li> <p class="py-2 mt-2 text-muted cat_date"> <%= fd.created_at.strftime("%d-%b-%Y")%></p></li>
           </ul>
         </div>
         <ul class="p-2 m-1">
-         <li> <p class="p-2 m-1 h4" >$<%= fd.amount%></p></li>
+         <li> <p class="p-2 mt-2 h4 box_heading" >$<%= fd.amount%></p></li>
          
         </ul>
       </div>

@@ -113,12 +113,17 @@ button a,
 }
 
 .cat_name {
-  max-width: 100px;
+  max-width: 160px;
   overflow: hidden;
 }
 
 .cat_date {
   min-width: 106px;
+  font-size: 0.8rem;
+}
+
+.box_heading {
+  font-size: 1.4rem;
 }
 
 @media only screen and (min-width: 768px) {
