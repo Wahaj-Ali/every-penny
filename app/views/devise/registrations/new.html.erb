@@ -1,0 +1,43 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+  <nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="sign_up_nav">
+    <li>
+    <a href="/"><i class="fa fa-navicon"></i></a>
+    </li>
+    <li>
+      <h2 class="heading text-uppercase fw-bold">Sign up</h2>
+    </li>
+    
+  </ul>
+  </nav>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="m-5 mb-3">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name",  class:"p-2 form-control", placeholder: "Full Name", id: "name" %>
+  </div>
+
+  <div class="m-5 mb-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"p-2 form-control", placeholder: "Email", id: "email"%>
+  </div>
+
+  <div class="m-5 mb-3">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"p-2 form-control", placeholder: "Password", id: "new-pass" %>
+  </div>
+
+  <div class="m-5 mb-3">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"p-2 form-control", placeholder: "Confirm Password" %>
+  </div>
+
+  <div class="mt-2 ms-5 mb-3 p-2">
+    <%= f.submit "Sign up" , class:" btn btn-primary fs-5" %>
+  </div>
+<% end %>
+
+<div class="m-5 mb-3 fs-5 p-2 ">
+<%= render "devise/shared/links" %>
+</div>

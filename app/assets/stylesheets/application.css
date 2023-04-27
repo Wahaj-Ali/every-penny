@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Proxima Nova', sans-serif;
+  background-color: whitesmoke;
+}
+
+.header ul {
+  display: flex;
+  background-color: #3778c2;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header ul li {
+  line-height: 40px;
+  padding: 5px;
+}
+
+button a,
+.category-div a {
+  text-decoration: none;
+}
+
+.header a {
+  color: inherit;
+}
+
+.header i {
+  font-size: 32px;
+}
+
+.header ul .btn {
+  background-color: inherit;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+}
+
+.category-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  max-height: 135px;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.category-div ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btnn {
+  background-color: #5fb523;
+  border: 1px solid white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  bottom: 0;
+}
+
+.btnn a {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.height-div {
+  height: 150px;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.img-thumbnail {
+  max-width: 70px;
+}
+
+#sign_up_nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 100px;
+}
+
+.cat_name {
+  max-width: 160px;
+  overflow: hidden;
+}
+
+.cat_date {
+  min-width: 106px;
+  font-size: 0.8rem;
+}
+
+.box_heading {
+  font-size: 1.3rem;
+}
+
+.price {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .cat_name {
+    max-width: max-content;
+  }
+}

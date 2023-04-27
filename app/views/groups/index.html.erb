@@ -1,0 +1,45 @@
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-navicon"></i></a>
+    </li>
+    <li class="d-flex">
+      <h2 class="heading fw-bold align-self-center">Categories</h2>
+    </li>
+    <li>
+    <%= button_to destroy_user_session_path, method: :delete, class: "logout-btn" do %>   
+      <i class="fa fa-sign-out"></i>
+    <%end%>
+    
+    </li>
+  </ul>
+  </nav>
+<%=render 'layouts/errornotice' %>
+<% if @groups.any?%>
+<% @groups.each do |group| %>
+  <div class="p-2 m-2 category-div">
+   <div class="category-info">
+    <p> <%=image_tag "#{group.icon}" ,class:"p-2 m-1 rounded img-thumbnail"%></p>
+    <ul class="px-2 mt-1">
+      <li> <p class="d-flex cat_name"><%= link_to group.name, group_path(group), class:"py-2 mt-2 text-muted h2 box_heading" %></p></li>
+      <li> <p class="py-2 mt-2 text-muted cat_date"> <%= group.created_at.strftime("%d-%b-%Y")%></p></li>
+    </ul>
+    </div>
+    <ul class="p-0 m-1">
+    <li><p class="p-2 m-1 h3 box_heading price"> $<%= group.money_tracks.sum(:amount)%></p></li>
+    <li>
+    <%if can? :destroy, group%>
+        <%=button_to "Delete", group_path(group.id), method: :delete, class:"btn btn-primary px-4 m-0"%>
+      <%end%>
+    </li>
+    </ul>
+    </div>
+<%end%>
+<%else%>
+<p class="p-2 m-2 h3">There is no Category. You can add Category</p>
+<%end%>
+
+
+<div class=" w-100  py-3 px-3 btnn">
+    <%= link_to "Add Category", new_group_path, class: "btn btn-outline-light  w-75 p-2"%>
+</div>

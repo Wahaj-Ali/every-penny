@@ -1,0 +1,30 @@
+<%= form_with model: @group, class:"input-form"  do |f|%>
+ <nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-arrow-left"></i></a>
+    </li>
+    <li class="d-flex">
+      <h2 class="heading fw-bold align-self-center">Add Category</h2>
+    </li>
+    <li class="d-flex">
+    <%= f.submit "Save", class:"btn btn-primary form-control align-self-center" %> 
+    </li>
+  </ul>
+  </nav>
+
+  <div class="m-5 mb-3">
+    <%= f.text_field :name,  required: true,  class:"p-2 form-control", placeholder: "Name", id:'name'%><br>
+  </div>
+  <div class="m-5 mb-3">
+    <%= f.select :icon, options_for_select([
+      ['Grocery', @icons["Grocery"]],
+      ['Shopping' ,@icons["Shopping"]],
+      ['Education' ,@icons["Education"]],
+      ['Bills' ,@icons["Bills"]],
+      ['Insurance' ,@icons["Insurance"]],
+      ['Travel' ,@icons["Travel"]],
+    ]),{ include_blank: "Select Icon"}, required: true , class:"form-select"%>
+
+  </div>  
+<%end%>

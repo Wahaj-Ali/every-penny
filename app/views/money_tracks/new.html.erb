@@ -1,0 +1,29 @@
+<%=form_with model: [@group, @group.money_tracks.create], class:"input-form"  do |f|%>
+
+  <nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="<%= group_path(@group) %>"><i class="fa fa-arrow-left"></i></a>
+    </li>
+    <li class="d-flex">
+      <h2 class="heading fw-bold align-self-center">Add Transaction</h2>
+    </li>
+    <li class="d-flex">
+    <%= f.submit "Save", class:"btn btn-primary form-control align-self-center" %> 
+    </li>
+  </ul>
+  </nav>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="m-5 mb-3">
+    <%= f.text_field :name,required: true, class:"p-2 form-control", placeholder: "Name", id: "name"%><br>
+    </div>
+
+    <div class="m-5 mb-3">
+    <%=f.text_field :category, value:@group.name, class:"p-2 form-control"%><br>
+    </div>
+
+    <div class="m-5 mb-3">
+    <%= f.number_field :amount ,  class:"p-2 form-control" , required: true, placeholder: 'Amount',  min: 1, id:"amount"%><br>
+    </div>
+<%end%>

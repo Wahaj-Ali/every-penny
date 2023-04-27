@@ -1,0 +1,57 @@
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-arrow-left"></i></a>
+    </li>
+    <li>
+      <h2 class="heading fw-bold">Category Details</h2>
+    </li>
+    <li>
+    <%= button_to destroy_user_session_path, method: :delete, class: "logout-btn" do %>   
+      <i class="fa fa-sign-out"></i>
+    <%end%>
+    </li>
+  </ul>
+</nav>
+
+<%=render 'layouts/errornotice'%>
+
+<div class="p-0 category-div">
+  <div class="category-info">
+    <ul class="p-2 m-2">
+        <li> <p class="p-0 m-0 text-muted h2" ><%= @group.name%></p></li>
+    </ul>
+  </div>
+  <ul class="p-2 m-2">
+    <li><p class="p-0 m-0 h3 price"> $<%= @group.money_tracks.sum(:amount)%></p></li>
+   
+  </ul>
+</div>
+
+
+ <% if @group.money_tracks.any? %>
+    
+    
+    <% @group.money_tracks.order(created_at:'DESC').each do |fd|%>
+      <div class="p-2 m-3 category-div">
+        <div class="category-info">
+        <p> <%=image_tag @group.icon ,class:"p-1 mx-1 mt-3 rounded img-thumbnail"%></p>
+          <ul class="px-1">
+            <li><p class="py-2 text-muted h2 cat_name box_heading" ><%= fd.name%></p></li>
+            <li> <p class="py-2 mt-2 text-muted cat_date"> <%= fd.created_at.strftime("%d-%b-%Y")%></p></li>
+          </ul>
+        </div>
+        <ul class="p-2 m-1">
+         <li> <p class="p-2 mt-2 h4 box_heading price" >$<%= fd.amount%></p></li>
+         
+        </ul>
+      </div>
+    <%end%>
+  <%else%>
+      <p class="p-2 m-2 h3" >There are no transactions for this category</p>
+  <%end%>
+
+
+<div class="w-100 py-3 px-3 btnn">
+    <%= link_to "Add transaction",  new_group_money_track_path( @group), class: "btn btn-outline-light  w-75 p-2"%>
+</div>
