@@ -9,7 +9,7 @@ class MoneyTracksController < ApplicationController
     @money_track = @group.money_tracks.create(moneytrack_params)
     if @money_track.save
       flash[:notice] = 'Transaction created successfully.'
-      redirect_to root_path
+      redirect_to group_path(@group)
     else
       render :new
     end
